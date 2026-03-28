@@ -1,0 +1,27 @@
+# ─── Secrets (NEVER commit) ──────────────────────────────
+.env
+.secrets.json
+
+# ─── Dependencies ────────────────────────────────────────
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# ─── Build output ────────────────────────────────────────
+backend/dist/
+frontend/dist/
+
+# ─── Database & temp ─────────────────────────────────────
+data/
+.tmp/
+
+# ─── OS & Editor ─────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.claude/
+*.log
+npm-debug.log*
+
+# ─── Uploaded user templates ─────────────────────────────
+templates/*.pdf

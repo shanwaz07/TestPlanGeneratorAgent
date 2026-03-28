@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-cosmic-indigo:       #2D2E67;
+  --color-cosmic-indigo-light: #EAEBF6;
+  --color-stellar-blue:        #3E83FA;
+  --color-stellar-blue-light:  #EBF2FE;
+  --color-nebula-green:        #48E29A;
+  --color-solar-flare:         #C8FF73;
+  --color-quantum-purple:      #7717C7;
+  --color-galactic-violet:     #B030FF;
+  --color-dark-matter:         #373A40;
+  --color-lunar-mist:          #F6F9FD;
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { height: 100%; }
+  body {
+    height: 100%;
+    margin: 0;
+    font-family: "Tenorite", "Aptos", "Calibri", "Segoe UI", system-ui, sans-serif;
+    font-size: 14px;
+    color: var(--color-dark-matter);
+    background: var(--color-lunar-mist);
+    -webkit-font-smoothing: antialiased;
+  }
+  #root { height: 100%; }
+
+  h1, h2, h3, h4 {
+    color: var(--color-cosmic-indigo);
+    font-weight: 700;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--color-lunar-mist); }
+  ::-webkit-scrollbar-thumb { background: var(--color-cosmic-indigo-light); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #c5c7e0; }
+}
+
+@layer components {
+  /* Section heading with Stellar Blue underline */
+  .section-heading {
+    @apply text-cosmic-indigo font-bold pb-2 border-b-2 border-stellar-blue mb-4;
+  }
+
+  /* Info callout card */
+  .callout-info {
+    @apply bg-stellar-blue-light border-l-4 border-stellar-blue rounded-r-lg p-4;
+  }
+
+  /* Alert callout card */
+  .callout-alert {
+    @apply bg-alert-red-light border-l-4 border-alert-red rounded-r-lg p-4;
+  }
+
+  /* Success callout card */
+  .callout-success {
+    @apply bg-emerald-50 border-l-4 border-nebula-green rounded-r-lg p-4;
+  }
+
+  /* Markdown rendered output */
+  .markdown-body {
+    @apply text-dark-matter leading-relaxed;
+  }
+  .markdown-body h1 { @apply text-xl font-bold text-cosmic-indigo mb-3 mt-6 pb-1 border-b-2 border-stellar-blue; }
+  .markdown-body h2 { @apply text-lg font-bold text-cosmic-indigo mb-2 mt-5; }
+  .markdown-body h3 { @apply text-base font-semibold text-cosmic-indigo mb-2 mt-4; }
+  .markdown-body p  { @apply mb-3; }
+  .markdown-body ul { @apply list-disc pl-5 mb-3 space-y-1; }
+  .markdown-body ol { @apply list-decimal pl-5 mb-3 space-y-1; }
+  .markdown-body code { @apply bg-cosmic-indigo-light text-cosmic-indigo px-1.5 py-0.5 rounded text-xs font-mono; }
+  .markdown-body pre  { @apply bg-cosmic-indigo-light rounded-lg p-4 overflow-x-auto mb-3; }
+  .markdown-body pre code { @apply bg-transparent p-0; }
+  .markdown-body table { @apply w-full border-collapse mb-4 text-sm; }
+  .markdown-body th { @apply bg-cosmic-indigo-light text-cosmic-indigo font-semibold text-left px-3 py-2 border border-cosmic-indigo-light; }
+  .markdown-body td { @apply px-3 py-2 border border-cosmic-indigo-light; }
+  .markdown-body tr:nth-child(even) td { @apply bg-lunar-mist; }
+  .markdown-body blockquote { @apply border-l-4 border-stellar-blue bg-stellar-blue-light pl-4 py-2 rounded-r italic mb-3; }
+  .markdown-body strong { @apply text-cosmic-indigo font-semibold; }
+  .markdown-body a { @apply text-stellar-blue underline; }
+  .markdown-body hr { @apply border-cosmic-indigo-light my-4; }
+}
+
+/* Keyboard shortcut animation */
+@keyframes slide-in {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);   opacity: 1; }
+}
+.toast-enter { animation: slide-in 0.25s ease-out; }

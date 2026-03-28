@@ -1,0 +1,20 @@
+{
+  "name": "intelligent-test-plan-generator",
+  "version": "1.0.0",
+  "description": "Full-stack app to generate test plans from JIRA tickets using LLMs",
+  "scripts": {
+    "tool:jira": "npm run tool:jira --prefix backend",
+    "tool:groq": "npm run tool:groq --prefix backend",
+    "tool:openai": "npm run tool:openai --prefix backend",
+    "tool:ollama": "npm run tool:ollama --prefix backend",
+    "tool:all": "npm run tool:all --prefix backend",
+    "backend:dev": "npm run dev --prefix backend",
+    "backend:build": "npm run build --prefix backend",
+    "frontend:dev": "npm run dev --prefix frontend",
+    "frontend:build": "npm run build --prefix frontend",
+    "dev": "concurrently \"npm run backend:dev\" \"npm run frontend:dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
