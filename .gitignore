@@ -2,6 +2,9 @@
 .env
 .secrets.json
 
+# ─── Internal conversation logs ──────────────────────────
+conversationwithclaude.md
+
 # ─── Dependencies ────────────────────────────────────────
 node_modules/
 backend/node_modules/
